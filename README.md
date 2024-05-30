@@ -1,2 +1,9 @@
-# 8-Puzzle-But-Now-With-Images
-Experience the next level of puzzle-solving with our 8 Puzzle Image Solver! Utilizing the powerful A* search algorithm, the solver efficiently finds the optimal solution while preserving the integrity of the image. The user-friendly interface showcases the step-by-step progression of the puzzle pieces, seamlessly reassembling the uploaded picture.
+Step 1) Pre requisites: Install python3, flask
+
+Step 2) Running Flask: when in the 8-puzzle-solver directory: run: python3 flask_app.py
+
+^this will run the server.
+
+Step 3) type 127.0.0.1:5000 in the url on your browser and hit enter.
+
+Step 4) Enjoy!
