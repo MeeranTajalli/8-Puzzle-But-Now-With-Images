@@ -1,0 +1,209 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0f7fa;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+    color: #333;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1000px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #333;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    opacity: 0;
+    animation: slideIn 2s forwards;
+}
+
+#content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);  /* Increased size */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#puzzle-container div {
+    width: 150px;  /* Increased size */
+    height: 150px;  /* Increased size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #6200ea;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#puzzle-container div.empty {
+    background-color: #f0f0f0;
+    border-color: #f0f0f0;
+}
+
+#puzzle-container div:hover {
+    background-color: #3700b3;
+}
+
+#message-container {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+    transition: opacity 1s;
+    opacity: 0;
+}
+
+#controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#controls button {
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#controls button:hover {
+    background-color: #e64a19;
+}
+
+#info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    border: 2px solid #333;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+#info-container h2 {
+    margin-bottom: 10px;
+    font-size: 23px;
+}
+
+#info-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#info-container li {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Custom file upload button */
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.custom-file-upload:hover {
+    background-color: #2980b9;
+}
+
+#message-container {
+    position: absolute !important;
+    top: 300px !important;  /* Adjust as needed */
+    right: 30px !important;  /* Adjust as needed */
+    width: 300px;
+    z-index: 1000;
+}
+.message {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.message.fly-right {
+    transform: translateX(0);
+    opacity: 1;
+}
+
